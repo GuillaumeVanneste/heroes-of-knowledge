@@ -2,8 +2,8 @@
 
     include 'includes/handle_form_Co.php';
 
-    $query = $pdo->query('SELECT * FROM connection');
-    $connection = $query->fetchALL();
+    $query = $pdo->query('SELECT * FROM users');
+    $users = $query->fetchALL();
 
 ?>
 
@@ -30,24 +30,6 @@
       
         <input type="submit">
     </form>
-  
-      <h2>Users</h2>
 
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>username</th>
-            <th>mail</th>
-            <th>password</th>
-        </tr>
-      <?php foreach($connection as $_user): ?>
-        <tr>
-            <td><?= $_user->id ?></td>
-            <td><?= $_user->username ?></td>
-            <td><?= $_user->mail ?></td>
-            <td><?= $_user->password ?></td>   
-            <td><a href="index.php?page=delete&id=<?= $_user->id ?>" title="delete" >X </a></td>
-        </tr>
-      <?php endforeach; ?>
-    </table>
+<a href="index.php?link=SignUp">Sign Up</a>
   

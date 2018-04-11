@@ -1,7 +1,10 @@
 <?php
 
+session_start();
+
 // Config 
 include_once 'includes/config.php';
+
 // Rooting
 if(!empty($_GET['link']))
 {
@@ -15,11 +18,19 @@ if(!empty($_GET['link']))
         case 'SignIn' :
             $page = 'signIn';
             break;
+
+        case 'SignUp' :
+            $page = 'signUp';
+            break;
+
+        case 'LogOut' :
+            $page = 'logout';
+            break;
     }
 } else
 {
-    $link = 'SignIn';
-    $page = 'signIn';
+    $link = 'Home';
+    $page = 'home';
 }
 
 

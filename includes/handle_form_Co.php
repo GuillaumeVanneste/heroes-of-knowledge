@@ -1,7 +1,4 @@
 <?php
-    echo '<pre>';
-    //var_dump($_POST);
-    echo '</pre>';
 
     $errorMessages = [];
     $successMessages = [];
@@ -31,20 +28,19 @@
         if(empty($errorMessages))
         {     
          
-            $password = md5($coPass);
-            $query = $pdo->query("SELECT username FROM connection WHERE mail='$mail' && password='$password'");
+            $query = $pdo->query("SELECT username FROM users WHERE mail='$mail'");
             $query->execute();
             $user = $query->fetch();
-          
-            if($user == false)
+
+            if($user == false || password_verify($coPass, $user->password))
             {
               $errorMessages[] = 'Wrong Mail or Password';
             }
-            else{
-              $successMessages[] = "wp";
+            else
+            {
+                $_SESSION['username'] = $user;
+                header("Location: index.php");
             }
-            
-        
     }
     else
     {
@@ -57,7 +53,7 @@
 
         if ($page == 'delete')
     {
-        $prepare = $pdo->prepare('DELETE FROM connection WHERE id = '.$id);
+        $prepare = $pdo->prepare('DELETE FROM users WHERE id = '.$id);
         $execute = $prepare->execute();
     }
     }

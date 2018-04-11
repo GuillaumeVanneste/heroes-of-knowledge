@@ -1,7 +1,7 @@
 <?php
     include 'includes/handle_form_Crea.php';
 
-    $query = $pdo->query('SELECT * FROM connection');
+    $query = $pdo->query('SELECT * FROM users');
     $connection = $query->fetchALL();
 
 ?>
@@ -21,7 +21,7 @@
         <label for="username">username</label>
 
         <br>
-      
+
         <input id="mail" type="mail" name="mail" value="<?= $_POST['mail'] ?>">
         <label for="mail">mail</label>
 
@@ -31,28 +31,9 @@
         <label for="password">password</label>
 
         <br>
-      
+
 
         <input type="submit">
     </form>
-  
-      <h2>Users</h2>
 
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>username</th>
-            <th>mail</th>
-            <th>password</th>
-        </tr>
-      <?php foreach($connection as $_user): ?>
-        <tr>
-            <td><?= $_user->id ?></td>
-            <td><?= $_user->username ?></td>
-            <td><?= $_user->mail ?></td>
-            <td><?= $_user->password ?></td>   
-            <td><a href="index.php?page=delete&id=<?= $_user->id ?>" title="delete" >X </a></td>
-        </tr>
-      <?php endforeach; ?>
-    </table>
-  
+<a href="index.php?link=SignIn">Sign In</a>

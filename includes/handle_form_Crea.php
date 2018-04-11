@@ -29,28 +29,29 @@
         }
 
 
+
         // Success
         if(empty($errorMessages))
-        {     
-              
+        {
             $prepare = $pdo->prepare('
-            INSERT INTO
-                  connection (username, mail, password)
-            VALUES(:username, :mail, :password)
+                INSERT INTO
+                    users (username, mail, password)
+                VALUES
+                    (:username, :mail, :password)
            ');
-          
-            $passwordHash = md5($password);
-          
+
+            $passwordHash = password_hash($password, PASSWORD_BCRYPT);
+
             $prepare->bindValue('username', $username);
             $prepare->bindValue('mail', $mail);
             $prepare->bindValue('password', $passwordHash);
-            
-            
+
+
 
             $prepare->execute();
-          
+
             $successMessages[] = 'User registered';
-          
+
             $_POST['username'] = '';
             $_POST['mail'] = '';
             $_POST['password'] = '';
@@ -67,6 +68,6 @@
 
         if ($page == 'delete')
     {
-        $prepare = $pdo->prepare('DELETE FROM connection WHERE id = '.$id);
+        $prepare = $pdo->prepare('DELETE FROM users WHERE id = '.$id);
         $execute = $prepare->execute();
     }
