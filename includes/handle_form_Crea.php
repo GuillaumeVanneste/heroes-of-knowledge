@@ -27,8 +27,28 @@
         {
             $errorMessages[] = 'Missing mail';
         }
+        else if(empty($password))
+        {
+            $errorMessages[] = 'Missing password';
+        }
+        else
+        {
+            $query = $pdo->query("SELECT id FROM users WHERE username='$username'");
+            $username_used = $query->fetchAll();
 
+            $query = $pdo->query("SELECT id FROM users WHERE mail='$mail'");
+            $mail_used = $query->fetchAll();
 
+            if(!empty($username_used))
+            {
+                $errorMessages[] = 'Username already used';
+            }
+
+            if(!empty($mail_used))
+            {
+                $errorMessages[] = 'Mail already used';
+            }
+        }
 
         // Success
         if(empty($errorMessages))
