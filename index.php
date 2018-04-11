@@ -26,7 +26,8 @@ if(!empty($_GET['link']))
         case 'LogOut' :
             $page = 'logout';
             break;
-        case 'Question'
+            
+        case 'Question' :
             $page = 'checkAnswer';
             break;
     }
