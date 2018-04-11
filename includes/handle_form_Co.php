@@ -16,9 +16,9 @@
         // Test errors
         if(empty($mail))
         {
-            $errorMessages[] = 'Missing username';
+            $errorMessages[] = 'Missing mail';
         }
-        else if(empty($coPass))
+        if(empty($coPass))
         {
             $errorMessages[] = 'Missing Password';
         }
