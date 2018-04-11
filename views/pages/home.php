@@ -6,3 +6,4 @@
 <a href="index.php?link=SignIn">Sign In</a>
 <a href="index.php?link=SignUp">Sign Up</a>
 <?php endif; ?>
+<a href="index.php?link=Question">Question</a>
