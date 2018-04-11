@@ -1,5 +1,7 @@
 <?php
 
+// Config 
+include_once 'includes/config.php';
 // Rooting
 if(!empty($_GET['link']))
 {
@@ -9,11 +11,15 @@ if(!empty($_GET['link']))
         case 'Home' :
             $page = 'home';
             break;
+        
+        case 'SignIn' :
+            $page = 'signIn';
+            break;
     }
 } else
 {
-    $link = 'Home';
-    $page = 'home';
+    $link = 'SignIn';
+    $page = 'signIn';
 }
 
 
