@@ -1,4 +1,4 @@
-<h1>Welcolme <?= $_SESSION['username']->username ?> !</h1>
+<h1>Welcolme <? if(!empty($_SESSION['username'])) : echo $_SESSION['username']->username; endif; ?> !</h1>
 
 <?php if(!empty($_SESSION['username'])) : ?>
 <a href="index.php?link=LogOut">Log Out</a>
