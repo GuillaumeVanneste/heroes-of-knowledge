@@ -25,9 +25,9 @@ endif; ?>
 <form action="#" method="post">
     <input id="user_answer" type="text" name="user_answer" autocomplete="off">
     <label for="user_answer">user_answer</label>
-
+</form>
     <br>
-  
+<form action="#" method="post">
     <input type="submit" value="<?= $clueTotal ?> clues left" name="clue" />
     <input type="submit">
 </form>
