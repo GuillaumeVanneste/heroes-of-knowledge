@@ -54,9 +54,9 @@
         $answerLC = strtolower($answer);
 
         $userAnswerReplace = str_replace(["une ","un ","the ", " ", ",", ":", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "~", "*"], "", $userAnswerLC);  // retirer les caracteres relou
-        $answerReplace = str_replace(["une ","un ","the ", " ", ",", ":", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "~", "*"], "", $answerLC);
-
         $userAnswerReplace = str_replace(["é","è","ê"], "e", $userAnswerReplace);
+      
+        $answerReplace = str_replace(["une ","un ","the ", " ", ",", ":", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "~", "*"], "", $answerLC);
         $answerReplace = str_replace(["é","è","ê"], "e", $answerReplace);
 
         $userAnswerLength = strlen($userAnswerReplace);     // Calc lenght
