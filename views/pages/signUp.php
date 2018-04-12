@@ -35,5 +35,3 @@
 
         <input type="submit">
     </form>
-
-<a href="index.php?link=signin">Sign In</a>

@@ -37,6 +37,10 @@ if(!empty($_GET['link']))
         case 'leaderboard' :
             $page = 'leaderboard';
             break;
+
+        case 'add' :
+            $page = 'add';
+            break;
     }
 } else
 {

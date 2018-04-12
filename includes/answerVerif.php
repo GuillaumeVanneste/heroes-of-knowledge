@@ -53,8 +53,11 @@
         $userAnswerLC = strtolower($userAnswer);     // Lowercase
         $answerLC = strtolower($answer);
 
-        $userAnswerReplace = str_replace([" ", ",", ":", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "~", "*", "the"], "", $userAnswerLC);  // retirer les caracteres relou
-        $answerReplace = str_replace([" ", ",", ":", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "~", "*", "the"], "", $answerLC);
+        $userAnswerReplace = str_replace(["une ","un ","the ", " ", ",", ":", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "~", "*"], "", $userAnswerLC);  // retirer les caracteres relou
+        $answerReplace = str_replace(["une ","un ","the ", " ", ",", ":", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "~", "*"], "", $answerLC);
+
+        $userAnswerReplace = str_replace(["é","è","ê"], "e", $userAnswerReplace);
+        $answerReplace = str_replace(["é","è","ê"], "e", $answerReplace);
 
         $userAnswerLength = strlen($userAnswerReplace);     // Calc lenght
         $answerLength = strlen($answerReplace);
@@ -66,7 +69,7 @@
         if ($userAnswerReplace == $answerReplace)
         {
             $successMessages = 'Tu as trouvé la bonne réponse !';
-            $query = $pdo->query("UPDATE users SET score='$current_question'");
+            $query = $pdo->query("UPDATE users SET score='$current_question' WHERE username='$current_user'");
             $current_question = switchQuestion();
             $question = getQuestion();
             $answer = getAnswer();
@@ -77,7 +80,7 @@
             if($levenshtein==$margeLeven)
             {
                 $successMessages = 'Tu as trouvé la bonne réponse !';
-                $query = $pdo->query("UPDATE users SET score='$current_question'");
+                $query = $pdo->query("UPDATE users SET score='$current_question' WHERE username='$current_user'");
                 $current_question = switchQuestion();
                 $question = getQuestion();
                 $answer = getAnswer();
