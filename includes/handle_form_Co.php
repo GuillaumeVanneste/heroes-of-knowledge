@@ -27,31 +27,6 @@
         // Success
         if(empty($errorMessages))
         {     
-<<<<<<< HEAD
-          $query = $pdo->query("SELECT username FROM users WHERE mail='$mail'");
-          $query->execute();
-          $user = $query->fetch();
-
-          if($user == false || password_verify($coPass, $user->password))
-          {
-            $errorMessages[] = 'Wrong Mail or Password';
-          }
-          else
-          {
-            $_SESSION['username'] = $user;
-            header("Location: index.php");
-          }
-    }
-    else
-    {
-        $_POST['username'] = '';  // si y a rien d'envoyé 
-        $_POST['mail'] = ''; 
-        $_POST['password'] = ''; 
-    }
-
-
-=======
-         
             $query = $pdo->query("SELECT username, password FROM users WHERE mail='$mail'");
             $user = $query->fetch();
 
@@ -71,6 +46,5 @@
             $_POST['mail'] = '';
             $_POST['password'] = '';
         }
->>>>>>> ce825f0cbe355fbddd0c379671bca45be4e4e602
 
     }
