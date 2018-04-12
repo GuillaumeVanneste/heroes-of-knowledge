@@ -1,63 +1,48 @@
 <?php
-    echo '<pre>';
-    //var_dump($_POST);
-    echo '</pre>';
 
-    $errorMessages = [];
-    $successMessages = [];
-    $page = !empty($_GET["page"]) ? $_GET["page"] : '';
-    $id = !empty($_GET["id"]) ? $_GET["id"] : '';
-    $answer ="GuiGuiLePlusBo";
-    $won = 0;
+    $errorMessages = '';
+    $successMessages = '';
+    $answer ="The Spider-man";
 
-
-    if(!empty($_POST))  
+    if(!empty($_POST['user_answer']))
     {
-    $userAnswer =($_POST['rep']);
-      
-    $UsserRepReplace = str_replace([" ","  ","$",".","?","/","-","+","_","<",">","=","(",")"], "", $userAnswer);  // retirer les caracteres relou
-    $TrueRepReplace = str_replace([" ","  ","$",".","?","/","-","+","_","<",">","=","(",")"], "", $answer);
-      
-    $UsserRepLC = strtolower($UsserRepReplace);     // Lowercase
-    $TrueRepLC = strtolower($TrueRepReplace);
-      
-    $UsserRepLength = strlen($UsserRepLC);     // Calc lenght
-    $TrueRepLength = strlen($TrueRepLC);
-      
-    $marge = floor($TrueRepLength*0.2);
-    $levenshtein = levenshtein($UsserRepLC, $TrueRepLC);
-    $margeLeven = floor($TrueRepLength*0.10);
-      
-     if($UsserRepLC == $TrueRepLC){
-       $Won = 1;
-     }
-      else{
-        if(($UsserRepLength)<=($TrueRepLength+$marge) && ($UsserRepLength)>=($TrueRepLength-$marge)){
-          if($levenshtein>($margeLeven+2)){
-            echo 'nan';
-           }
-          else if($levenshtein==$margeLeven){
-            $won=1;
-            echo 'bravo';
-          }
-          else if($levenshtein==($margeLeven+1)){
-            echo 'tu y es presque';
-          }
-          else{
-            echo 'nan';
-          }
-        }
-        else{
-          echo 'nan';
-        }
-      }
-      
-    echo '<pre>';
-    var_dump($won);
-    echo '</pre>';
-    
-   
-      
-    }
+        $userAnswer = ($_POST['user_answer']);
 
-?>
+        $userAnswerLC = strtolower($userAnswer);     // Lowercase
+        $answerLC = strtolower($answer);
+
+        $userAnswerReplace = str_replace([" ", ",", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "the"], "", $userAnswerLC);  // retirer les caracteres relou
+        $answerReplace = str_replace([" ", ",", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "the"], "", $answerLC);
+
+        $userAnswerLength = strlen($userAnswerReplace);     // Calc lenght
+        $answerLength = strlen($answerReplace);
+
+        $marge = floor($answerLength * 0.2);
+        $levenshtein = levenshtein($userAnswerReplace, $answerReplace);
+        $margeLeven = floor($answerLength * 0.10);
+
+        if ($userAnswerReplace == $answerReplace)
+        {
+            $successMessages = 'Tu as trouvé la bonne réponse !';
+        }
+        else if (($userAnswerLength) <= ($answerLength + $marge)
+            && ($userAnswerLength) >= ($answerLength - $marge))
+        {
+            if($levenshtein==$margeLeven)
+            {
+                $successMessages = 'Tu as trouvé la bonne réponse !';
+            }
+            else if($levenshtein==($margeLeven+1))
+            {
+                $errorMessages = 'tu y es presque !';
+            }
+            else
+            {
+                $errorMessages = "Ce n'est pas la réponse attendu !";
+            }
+        }
+        else
+        {
+            $errorMessages = "Ce n'est pas la réponse attendu !";
+        }
+    }
