@@ -53,8 +53,13 @@
         $userAnswerLC = strtolower($userAnswer);     // Lowercase
         $answerLC = strtolower($answer);
 
-        $userAnswerReplace = str_replace([" ", ",", ":", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "~", "*", "the"], "", $userAnswerLC);  // retirer les caracteres relou
-        $answerReplace = str_replace([" ", ",", ":", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "~", "*", "the"], "", $answerLC);
+        $userAnswerReplace = str_replace(["une ","un ","the ", " ", ",", ":", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "~", "*"], "", $userAnswerLC);  // retirer les caracteres relou
+      
+        $userAnswerReplace = str_replace(["é","è","ê"], "e", $userAnswerReplace);
+      
+        $answerReplace = str_replace(["une ","un ","the ", " ", ",", ":", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "~", "*"], "", $answerLC);
+      
+        $answerReplace = str_replace(["é","è","ê"], "e", $answerReplace);
 
         $userAnswerLength = strlen($userAnswerReplace);     // Calc lenght
         $answerLength = strlen($answerReplace);
