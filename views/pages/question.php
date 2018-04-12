@@ -1,6 +1,7 @@
 <?php
 
-include 'includes/answerVerif.php';
+include_once 'includes/answerVerif.php';
+include_once 'includes/clue.php';
 
 if($errorMessages) : ?>
 <p><?= $errorMessages ?></p>
@@ -17,6 +18,7 @@ if($successMessages) : ?>
     <label for="user_answer">user_answer</label>
 
     <br>
-      
+  
+    <input type="submit" value="clue" name="clue" />  
     <input type="submit">
 </form>
