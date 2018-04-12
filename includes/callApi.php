@@ -33,19 +33,19 @@
     
     $sentence = "$informations[0]+$name+$moreWords[0]+$fullName+".".";
     $sentence = str_replace("+","",$sentence);
-    echo $sentence;
+  //  echo $sentence;
     
   }else if($randomInfo == 1){ // Place of birth
     
     $sentence = "$informations[1]+$name+$moreWords[0]+$placeOfBirth+".".";
     $sentence = str_replace("+","",$sentence);
-    echo $sentence;
+   // echo $sentence;
     
   }else if($randomInfo == 2){ // Base
     
     $sentence = "$informations[2]+$name+$informations[3]+$base+".".";
     $sentence = str_replace("+","",$sentence);
-    echo $sentence;
+   // echo $sentence;
     
   }else {
     echo "error";
@@ -60,7 +60,4 @@
 
 ?>
 
-  <form action="#" method="post">
-    <input type="submit" value="Une autre!" name="reload" />
-  </form>
 

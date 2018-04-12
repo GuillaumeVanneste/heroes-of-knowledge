@@ -45,6 +45,6 @@
             $_POST['username'] = '';  // si y a rien d'envoyé
             $_POST['mail'] = '';
             $_POST['password'] = '';
-        }
+        } 
 
     }
