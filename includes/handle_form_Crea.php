@@ -11,7 +11,6 @@
         $username = trim($_POST['username']);
         $mail = trim($_POST['mail']);
         $password = trim($_POST['password']);// rebot âge et garde les valeurs
-                                              // same
 
         // Test errors
         if(empty($username))

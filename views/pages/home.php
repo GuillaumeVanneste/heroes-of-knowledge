@@ -1,10 +1,10 @@
-<h1>Welcolme <? if(!empty($_SESSION['username'])) : echo $_SESSION['username']->username; endif; ?> !</h1>
+<h1>Welcolme <? if(!empty($current_user)) : echo $current_user; endif; ?> !</h1>
 
 <?php if(!empty($_SESSION['username'])) : ?>
-<a href="index.php?link=LogOut">Log Out</a>
+<a href="index.php?link=logOut">Log Out</a>
+<a href="index.php?link=question">Question</a>
 <?php else: ?>
-<a href="index.php?link=SignIn">Sign In</a>
-<a href="index.php?link=SignUp">Sign Up</a>
+<a href="index.php?link=signin">Sign In</a>
+<a href="index.php?link=signup">Sign Up</a>
 <?php endif; ?>
-<a href="index.php?link=Question">Question</a>
-<a href="index.php?link=Leaderboard">Leaderboard</a>
+<a href="index.php?link=leaderboard">Leaderboard</a>

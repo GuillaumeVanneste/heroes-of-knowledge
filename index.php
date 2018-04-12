@@ -2,6 +2,9 @@
 
 session_start();
 
+if(!empty($_SESSION['username']))
+    $current_user = $_SESSION['username']->username;
+
 // Config 
 include_once 'includes/config.php';
 
@@ -11,33 +14,33 @@ if(!empty($_GET['link']))
     $link = $_GET['link'];
     switch ($link)
     {
-        case 'Home' :
+        case 'home' :
             $page = 'home';
             break;
         
-        case 'SignIn' :
+        case 'signin' :
             $page = 'signIn';
             break;
 
-        case 'SignUp' :
+        case 'signup' :
             $page = 'signUp';
             break;
 
-        case 'LogOut' :
+        case 'logOut' :
             $page = 'logout';
             break;
 
-        case 'Question' :
+        case 'question' :
             $page = 'question';
             break;
 
-        case 'Leaderboard' :
+        case 'leaderboard' :
             $page = 'leaderboard';
             break;
     }
 } else
 {
-    $link = 'Home';
+    $link = 'home';
     $page = 'home';
 }
 

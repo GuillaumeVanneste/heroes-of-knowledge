@@ -17,17 +17,17 @@
     <?php endforeach; ?>
 
     <form action="#" method="post">
-        <input id="username" type="text" name="username" value="<?= $_POST['username'] ?>">
+        <input id="username" type="text" name="username" autocomplete="off"">
         <label for="username">username</label>
 
         <br>
 
-        <input id="mail" type="mail" name="mail" value="<?= $_POST['mail'] ?>">
+        <input id="mail" type="mail" name="mail" autocomplete="off"">
         <label for="mail">mail</label>
 
         <br>
 
-        <input id="password" type="password" name="password" value="<?= $_POST['password'] ?>">
+        <input id="password" type="password" name="password" autocomplete="off"">
         <label for="password">password</label>
 
         <br>
@@ -36,4 +36,4 @@
         <input type="submit">
     </form>
 
-<a href="index.php?link=SignIn">Sign In</a>
+<a href="index.php?link=signin">Sign In</a>

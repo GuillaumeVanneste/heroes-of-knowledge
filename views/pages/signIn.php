@@ -17,12 +17,12 @@
     <?php endforeach; ?>
 
     <form action="#" method="post">
-        <input id="coMailName" type="text" name="coMailName">
+        <input id="coMailName" type="text" name="coMailName" autocomplete="off">
         <label for="coMailName">CO MAIL NAME</label>
 
         <br>
       
-        <input id="coPass" type="password" name="coPass">
+        <input id="coPass" type="password" name="coPass" autocomplete="off">
         <label for="coPass">CoPass</label>
 
         <br>
@@ -31,5 +31,5 @@
         <input type="submit">
     </form>
 
-<a href="index.php?link=SignUp">Sign Up</a>
+<a href="index.php?link=signup">Sign Up</a>
   
