@@ -3,7 +3,7 @@
 session_start();
 
 if(!empty($_SESSION['username']))
-    $current_user = $_SESSION['username']->username;
+    $current_user = $_SESSION['username'];
 
 // Config 
 include_once 'includes/config.php';
@@ -36,10 +36,6 @@ if(!empty($_GET['link']))
 
         case 'leaderboard' :
             $page = 'leaderboard';
-            break;
-
-        case 'add' :
-            $page = 'add';
             break;
     }
 } else

@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Heroes of Knowledge - <?= $link ?></title>
 
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
