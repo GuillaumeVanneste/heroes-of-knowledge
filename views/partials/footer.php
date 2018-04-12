@@ -9,8 +9,8 @@
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Accéder au quiz</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Leaderboard</a></li>
+                        <li><a class="grey-text text-lighten-3" href="index.php?link=question">Accéder au quiz</a></li>
+                        <li><a class="grey-text text-lighten-3" href="index.php?link=leaderboard">Leaderboard</a></li>
                     </ul>
                 </div>
             </div>
@@ -22,6 +22,8 @@
         </div>
     </footer>
 
+    <script src="scripts/jquery-3.3.1.min.js"></script>
     <script src="scripts/materialize.min.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>

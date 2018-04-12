@@ -8,30 +8,37 @@
 
 
 
-    <?php foreach($errorMessages as $message): ?>
-        <p style="color: red;"><?= $message ?></p>
-    <?php endforeach; ?>
+<div class="row">
+    <div class="col s12">
+        <?php foreach($errorMessages as $message): ?>
+            <p style="color: red;"><?= $message ?></p>
+        <?php endforeach; ?>
 
-    <?php foreach($successMessages as $message): ?>
-        <p style="color: green;"><?= $message ?></p>
-    <?php endforeach; ?>
+        <?php foreach($successMessages as $message): ?>
+            <p style="color: green;"><?= $message ?></p>
+        <?php endforeach; ?>
+    </div>
+</div>
 
-    <form action="#" method="post">
-        <input id="username" type="text" name="username" autocomplete="off"">
-        <label for="username">username</label>
+<div class="row">
+    <form class="col s12 m4 offset-m4" action="#" method="post">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="username" type="text" name="username" autocomplete="off"">
+                <label for="username">username</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="mail" type="text" name="mail" autocomplete="off"">
+                <label for="mail">mail</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="password" type="password" name="password" autocomplete="off"">
+                <label for="password">password</label>
+            </div>
+        </div>
 
-        <br>
-
-        <input id="mail" type="mail" name="mail" autocomplete="off"">
-        <label for="mail">mail</label>
-
-        <br>
-
-        <input id="password" type="password" name="password" autocomplete="off"">
-        <label for="password">password</label>
-
-        <br>
-
-
-        <input type="submit">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
     </form>
+</div>
