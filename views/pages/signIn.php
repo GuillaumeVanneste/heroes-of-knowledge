@@ -2,7 +2,7 @@
 
     include 'includes/handle_form_Co.php';
 
-    $query = $pdo->query('SELECT * FROM users');
+    $query = $pdo->query('SELECT * FROM users');  // Sign IN
     $users = $query->fetchALL();
 
 ?>

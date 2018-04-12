@@ -10,7 +10,7 @@
         // Retrieve form data
         $username = trim($_POST['username']);
         $mail = trim($_POST['mail']);
-        $password = trim($_POST['password']);// rebot âge et garde les valeurs
+        $password = trim($_POST['password']);// rebot et garde les valeurs
 
         // Test errors
         if(empty($username))

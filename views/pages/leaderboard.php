@@ -5,8 +5,6 @@
     $i = 1;
 
 
-   // $query = $pdo->query('UPDATE users SET score='.$Question' WHERE username='.$username)
-
 ?>
 
   
