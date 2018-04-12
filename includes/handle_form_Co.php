@@ -27,6 +27,7 @@
         // Success
         if(empty($errorMessages))
         {     
+<<<<<<< HEAD
           $query = $pdo->query("SELECT username FROM users WHERE mail='$mail'");
           $query->execute();
           $user = $query->fetch();
@@ -49,10 +50,27 @@
     }
 
 
+=======
+         
+            $query = $pdo->query("SELECT username, password FROM users WHERE mail='$mail'");
+            $user = $query->fetch();
 
-        if ($page == 'delete')
-    {
-        $prepare = $pdo->prepare('DELETE FROM users WHERE id = '.$id);
-        $execute = $prepare->execute();
-    }
+            if(password_verify($coPass, $user->password))
+            {
+                $_SESSION['username'] = $user->username;
+                header("Location: index.php");
+            }
+            else
+            {
+                $errorMessages[] = 'Wrong Mail or Password';
+            }
+        }
+        else
+        {
+            $_POST['username'] = '';  // si y a rien d'envoyé
+            $_POST['mail'] = '';
+            $_POST['password'] = '';
+        }
+>>>>>>> ce825f0cbe355fbddd0c379671bca45be4e4e602
+
     }
