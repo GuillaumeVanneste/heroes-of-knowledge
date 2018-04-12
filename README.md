@@ -25,12 +25,15 @@ There is also a use of API that allows to randomly generate informations about h
 ## Resources
 
 HTML5
+
 CSS3
+
 PHP
-JS
-Bootsrap
+
 Visual Studio Code
+
 Google Chrome Dev Tools
+
 Materialize CSS
 
 
