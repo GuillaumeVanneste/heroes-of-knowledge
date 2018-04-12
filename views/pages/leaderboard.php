@@ -1,8 +1,8 @@
 <?php
 
     $query = $pdo->query('SELECT * FROM users ORDER BY score DESC');
-    $connection = $query->fetchALL();
-    $i=0;
+    $users = $query->fetchALL();
+    $i=1;
 
 
    // $query = $pdo->query('UPDATE users SET score='.$Question' WHERE username='.$username)
@@ -14,14 +14,16 @@
 
     <table>
         <tr>
-            <th>score</th>
-            <th>username</th>
+            <th>#</th>
+            <th>User</th>
+            <th>Score</th>
         </tr>
-      <?php foreach($connection as $_user):
-          if($i<10){      ?>
+      <?php foreach($users as $_user):
+          if($i<=10){      ?>
         <tr>
+            <td><?= $i ?></td>
+            <td><?= $_user->username ?></td>
             <td><?= $_user->score ?></td>
-            <td><?= $_user->username ?></td> 
         </tr>
       <?php 
          $i++;   }

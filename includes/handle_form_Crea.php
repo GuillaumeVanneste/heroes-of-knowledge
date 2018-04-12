@@ -1,12 +1,7 @@
 <?php
-    echo '<pre>';
-    //var_dump($_POST);
-    echo '</pre>';
 
     $errorMessages = [];
     $successMessages = [];
-    $page = !empty($_GET["page"]) ? $_GET["page"] : '';
-    $id = !empty($_GET["id"]) ? $_GET["id"] : '';
 
     // Form sent
     if(!empty($_POST)) // si il est envoyé 
@@ -82,12 +77,4 @@
         $_POST['username'] = '';  // si y a rien d'envoyé 
         $_POST['mail'] = ''; 
         $_POST['password'] = ''; 
-    }
-
-
-
-        if ($page == 'delete')
-    {
-        $prepare = $pdo->prepare('DELETE FROM users WHERE id = '.$id);
-        $execute = $prepare->execute();
     }

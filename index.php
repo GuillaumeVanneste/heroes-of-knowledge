@@ -30,6 +30,10 @@ if(!empty($_GET['link']))
         case 'Question' :
             $page = 'question';
             break;
+
+        case 'Leaderboard' :
+            $page = 'leaderboard';
+            break;
     }
 } else
 {
