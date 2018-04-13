@@ -10,41 +10,43 @@
 
         // Retrieve form data
         $mail = trim($_POST['coMailName']);
-        $coPass = trim($_POST['coPass']); // rebot âge et garde les valeurs
-                                              // same
+        $coPass = trim($_POST['coPass']);
 
         // Test errors
-        if(empty($mail))
-        {
+        if (empty($mail)) {
             $errorMessages[] = 'Missing mail';
         }
-        if(empty($coPass))
-        {
+        if (empty($coPass)) {
             $errorMessages[] = 'Missing Password';
         }
 
 
         // Success
-        if(empty($errorMessages))
-        {
+        if (empty($errorMessages)) {
             $query = $pdo->query("SELECT username, password FROM users WHERE mail='$mail'");
             $user = $query->fetch();
 
-            if(password_verify($coPass, $user->password))
+            if($user == true)
             {
-                $_SESSION['username'] = $user->username;
-                header("Location: index.php");
+                if (password_verify($coPass, $user->password))
+                {
+                    $_SESSION['username'] = $user->username;
+                    header("Location: index.php");
+                }
+                else
+                {
+                    $errorMessages[] = 'Wrong Mail or Password';
+                }
             }
             else
             {
                 $errorMessages[] = 'Wrong Mail or Password';
             }
         }
-        else
-        {
-            $_POST['username'] = '';  // si y a rien d'envoyé
-            $_POST['mail'] = '';
-            $_POST['password'] = '';
-        }
-
+    }
+    else
+    {
+        $_POST['username'] = '';  // si y a rien d'envoyé
+        $_POST['mail'] = '';
+        $_POST['password'] = '';
     }

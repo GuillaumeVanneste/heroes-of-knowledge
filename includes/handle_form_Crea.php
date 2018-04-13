@@ -17,15 +17,18 @@
         {
             $errorMessages[] = 'Missing username';
         }
-        else if(empty($mail))
+
+        if(empty($mail))
         {
             $errorMessages[] = 'Missing mail';
         }
-        else if(empty($password))
+
+        if(empty($password))
         {
             $errorMessages[] = 'Missing password';
         }
-        else
+
+        if(!empty($username) && !empty($mail) && !empty($password))
         {
             $query = $pdo->query("SELECT id FROM users WHERE username='$username'");
             $username_used = $query->fetchAll();

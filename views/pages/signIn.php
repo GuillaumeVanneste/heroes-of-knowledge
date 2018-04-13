@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col s12 m4 offset-m4">
                 <?php foreach($errorMessages as $message): ?>
-                    <blockquote><?= $message ?></blockquote>
+                    <blockquote class="errorMessage"><?= $message ?></blockquote>
                 <?php endforeach; ?>
             </div>
         </div>
