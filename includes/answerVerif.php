@@ -64,9 +64,9 @@
 
         $marge = floor($answerLength * 0.2);
         $levenshtein = levenshtein($userAnswerReplace, $answerReplace);
-        $margeLeven = floor($answerLength * 0.10);
+        $margeLeven = floor($answerLength * 0.10);     
 
-        if ($userAnswerReplace == $answerReplace)
+        if ($userAnswerReplace == $answerReplace)   //win or lose
         {
             $successMessages = 'Tu as trouvé la bonne réponse !';
             $query = $pdo->query("UPDATE users SET score='$current_question' WHERE username='$current_user'");
