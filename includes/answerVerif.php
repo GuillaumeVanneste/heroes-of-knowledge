@@ -54,17 +54,17 @@
         $answerLC = strtolower($answer);
 
         $userAnswerReplace = str_replace(["des ", "une ","un ","the ", " ", ",", ":", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "~", "*"], "", $userAnswerLC);  // retirer les caracteres relou
-        $userAnswerReplace = str_replace(["é","è","ê"], "e", $userAnswerReplace);
-      
+        $userAnswerReplace = str_replace(["é", "è", "ê"], "e", $userAnswerReplace);
+
         $answerReplace = str_replace(["des ", "une ","un ","the ", " ", ",", ":", "#", "%", "$", ".", "?", "!", "/", "-", "+", "_", "<", ">", "=", "(", ")", "~", "*"], "", $answerLC);
-        $answerReplace = str_replace(["é","è","ê"], "e", $answerReplace);
+        $answerReplace = str_replace(["é", "è", "ê"], "e", $answerReplace);
 
         $userAnswerLength = strlen($userAnswerReplace);     // Calc lenght
         $answerLength = strlen($answerReplace);
 
         $marge = floor($answerLength * 0.2);
         $levenshtein = levenshtein($userAnswerReplace, $answerReplace);
-        $margeLeven = floor($answerLength * 0.10);     
+        $margeLeven = floor($answerLength * 0.15);
 
         if ($userAnswerReplace == $answerReplace)   //win or lose
         {
@@ -77,7 +77,7 @@
         else if (($userAnswerLength) <= ($answerLength + $marge)
             && ($userAnswerLength) >= ($answerLength - $marge))
         {
-            if($levenshtein==$margeLeven)
+            if($levenshtein==$margeLeven+1)
             {
                 $successMessages = 'Tu as trouvé la bonne réponse !';
                 $query = $pdo->query("UPDATE users SET score='$current_question' WHERE username='$current_user'");
@@ -85,7 +85,7 @@
                 $question = getQuestion();
                 $answer = getAnswer();
             }
-            else if($levenshtein==($margeLeven+1))
+            else if($levenshtein==($margeLeven+2))
             {
                 $errorMessages = 'tu y es presque !';
             }
