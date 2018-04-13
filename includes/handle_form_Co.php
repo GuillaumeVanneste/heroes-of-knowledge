@@ -26,7 +26,7 @@
 
         // Success
         if(empty($errorMessages))
-
+        {
             $query = $pdo->query("SELECT username, password FROM users WHERE mail='$mail'");
             $user = $query->fetch();
 
@@ -45,6 +45,6 @@
             $_POST['username'] = '';  // si y a rien d'envoyé
             $_POST['mail'] = '';
             $_POST['password'] = '';
-        } 
+        }
 
     }
