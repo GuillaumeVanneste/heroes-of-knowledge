@@ -20,18 +20,37 @@ if($successMessages) : ?>
     </div>
 <?php endif; ?>
 
-<div class="row centered">
-    <p class="col s12 m8 offset-m2 question"><?= $current_question.' - '.$question ?></p>
-</div>
+    <div class="row centered">
+        <p class="col s12 m8 offset-m2 question"><?= $current_question.' - '.$question ?></p>
+    </div>
 
 <?php
 if($current_question % 5 == 0) : $i = $current_question / 5;
 if($i % 2 == 1) : ?>
-    <audio src="audios/audio-<?= $i ?>.mp3"
-           controls
-           autoplay
-           loop>
-    </audio>
+    <section class="audio">
+        <audio src="audios/audio-<?= $i ?>.mp3"
+               autoplay
+               loop>
+        </audio>
+
+        <div class="player">
+            <div class="head">
+                <div class="front">
+                </div>
+            </div>
+            <div class="timeline">
+                <div class="soundline">
+                    <div class="current"></div>
+                </div>
+                <div class="controllers active">
+                    <div class="play">
+                        <i id="playIcon" class="fas fa-pause"></i>
+                    </div>
+                    <div class="pause"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <?php else : $i = $i / 2; ?>
     <video class="responsive-video " src="videos/video-<?= $i ?>.mp4"

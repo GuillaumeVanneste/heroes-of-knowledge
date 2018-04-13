@@ -1,59 +1,82 @@
-img.logo
-{
-    width: 55px;
-}
-
-body
-{
+body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
 
-main
-{
+main {
     flex: 1 0 auto;
 }
 
-main
-{
-    margin-top: 50px;
+img.logo {
+    width: 55px;
+}
+
+main {
+    margin-top: 0px;
     margin-bottom: 0px;
 }
 
-blockquote.successMessage
-{
+blockquote.successMessage {
     margin: 0;
     border-color: #76ff03;
 }
 
-blockquote.errorMessage
-{
+blockquote.errorMessage {
     margin: 0;
     border-color: #B71C1C;
 }
 
-div.centered
-{
+div.centered {
     text-align: center;
 }
 
-p.question
-{
+p.question {
     font-size: 1.5rem;
     font-weight: 400;
 }
 
-audio
-{
-    display: block;
-    margin: 0 auto;
-}
-
-video
-{
+video {
     display: block;
     margin: 0 auto;
     max-width: 600px;
     max-height: 400px;
+}
+
+main {
+    background: linear-gradient(to bottom right, #fff 45%, #f6b2b5);
+}
+
+.home h1 {
+    margin-top: 0;
+    padding-top: 100px;
+    padding-left: 40px;
+    font-size: 2.6rem;
+    font-weight: bolder;
+    margin-bottom: 130px;
+}
+
+h1.leader {
+    margin-top: 0;
+    padding-top: 40px;
+    padding-left: 40px;
+    font-size: 2.6rem;
+    font-weight: bolder;
+}
+
+.home p {
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    line-height: 28px;
+}
+
+.home .row {
+    margin-bottom: 0px;
+    padding-bottom: 70px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
 }

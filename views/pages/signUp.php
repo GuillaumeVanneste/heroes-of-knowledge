@@ -1,5 +1,5 @@
 <?php
-    include 'includes/handle_form_Crea.php';
+    include_once 'includes/handle_form_Crea.php';
 
     $query = $pdo->query('SELECT * FROM users'); // SignUp
     $connection = $query->fetchALL();

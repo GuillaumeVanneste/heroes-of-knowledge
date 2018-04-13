@@ -8,17 +8,17 @@
 ?>
 
   
-    <h2>Leaderboard</h2>
+    <h1 class="leader">Leaderboard</h1>
 
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <table class="centered">
                 <thead>
-                <tr>
-                    <th>#</th>
-                    <th>User</th>
-                    <th>Score</th>
-                </tr>
+                    <tr>
+                        <th>#</th>
+                        <th>User</th>
+                        <th>Score</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <?php foreach($users as $_user):
