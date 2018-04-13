@@ -61,37 +61,33 @@ if($i % 2 == 1) : ?>
 <?php endif;
 endif; ?>
 
-
-<div class="row">
-    <form class="col s12 m8 offset-m2" action="#" method="post">
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">mode_edit</i>
-                <input id="user_answer" type="text" name="user_answer" autocomplete="off">
-                <label for="user_answer">Tapez votre réponse ici...</label>
+<div class="answer">
+    <div class="row">
+        <form class="col s12 m8 offset-m2" action="#" method="post">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <input id="user_answer" type="text" name="user_answer" autocomplete="off">
+                    <label for="user_answer">Tapez votre réponse ici...</label>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
+
+    <div class="row">
+        <form class="col s12 m8 offset-m2" action="#" method="post">
+            <div class="row">
+                <div class="col s12 m9">
+                    <p>
+                        <?php if(!empty($_POST['clue'])) : if($clueTotal > 0 && $clueTotal <= 3) :
+                            echo $textClue;
+                        endif; endif; ?>
+                    </p>
+                </div>
+                <div class="col s12 offset-s3 m3">
+                    <button class="btn waves-effect waves-light" type="submit" value="clue" name="clue"><?= $clueTotal ?> Indices restants</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
-
-<div class="row">
-    <form class="col s12 m8 offset-m2" action="#" method="post">
-        <div class="row">
-            <div class="col s12 m9">
-                <p>
-                    <?php if(!empty($_POST['clue'])) : if($clueTotal > 0 && $clueTotal <= 3) :
-                        echo $textClue;
-                    endif; endif; ?>
-                </p>
-            </div>
-            <div class="col s12 offset-s3 m3">
-                <button class="btn waves-effect waves-light" type="submit" value="clue" name="clue"><?= $clueTotal ?> Indices restants</button>
-            </div>
-        </div>
-    </form>
-</div>
-
-
-<form action="#" method="post">
-
-</form>

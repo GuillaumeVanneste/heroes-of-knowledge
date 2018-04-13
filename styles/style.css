@@ -81,3 +81,11 @@ a {
     color: #fff;
     text-decoration: none;
 }
+
+th {
+    font-weight: bold;
+}
+
+div.answer {
+    padding-top: 50px;
+}
