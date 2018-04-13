@@ -15,19 +15,45 @@ main
     flex: 1 0 auto;
 }
 
-.login
+main
 {
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-bottom: 0px;
 }
 
-.login blockquote.successMessage
+blockquote.successMessage
 {
     margin: 0;
     border-color: #76ff03;
 }
 
-.login blockquote.errorMessage
+blockquote.errorMessage
 {
     margin: 0;
     border-color: #B71C1C;
+}
+
+div.centered
+{
+    text-align: center;
+}
+
+p.question
+{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+audio
+{
+    display: block;
+    margin: 0 auto;
+}
+
+video
+{
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+    max-height: 400px;
 }

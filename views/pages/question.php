@@ -3,15 +3,26 @@
 include_once 'includes/answerVerif.php';
 include_once 'includes/clue.php';
 
+
 if($errorMessages) : ?>
-<p><?= $errorMessages ?></p>
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <blockquote class="errorMessage"><?= $errorMessages ?></blockquote>
+        </div>
+    </div>
 <?php endif;
 
 if($successMessages) : ?>
-<p><?= $successMessages ?></p>
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <blockquote class="successMessage"><?= $successMessages ?></blockquote>
+        </div>
+    </div>
 <?php endif; ?>
 
-<p><?= $question ?></p>
+<div class="row centered">
+    <p class="col s12 m8 offset-m2 question"><?= $current_question.' - '.$question ?></p>
+</div>
 
 <?php
 if($current_question % 5 == 0) : $i = $current_question / 5;
@@ -23,7 +34,7 @@ if($i % 2 == 1) : ?>
     </audio>
 
 <?php else : $i = $i / 2; ?>
-    <video src="videos/video-<?= $i ?>.mp4"
+    <video class="responsive-video " src="videos/video-<?= $i ?>.mp4"
            controls
            autoplay
            loop>
@@ -31,12 +42,37 @@ if($i % 2 == 1) : ?>
 <?php endif;
 endif; ?>
 
+
+<div class="row">
+    <form class="col s12 m8 offset-m2" action="#" method="post">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">mode_edit</i>
+                <input id="user_answer" type="text" name="user_answer" autocomplete="off">
+                <label for="user_answer">Tapez votre réponse ici...</label>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row">
+    <form class="col s12 m8 offset-m2" action="#" method="post">
+        <div class="row">
+            <div class="col s12 m9">
+                <p>
+                    <?php if(!empty($_POST['clue'])) : if($clueTotal > 0 && $clueTotal <= 3) :
+                        echo $textClue;
+                    endif; endif; ?>
+                </p>
+            </div>
+            <div class="col s12 offset-s3 m3">
+                <button class="btn waves-effect waves-light" type="submit" value="clue" name="clue"><?= $clueTotal ?> Indices restants</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
 <form action="#" method="post">
-    <input id="user_answer" type="text" name="user_answer" autocomplete="off">
-    <label for="user_answer">user_answer</label>
-    <input type="submit">
-</form>
-    <br>
-<form action="#" method="post">
-    <input type="submit" value="<?= $clueTotal ?> clues left" name="clue" />
+
 </form>

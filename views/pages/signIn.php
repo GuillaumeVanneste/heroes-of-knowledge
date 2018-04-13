@@ -20,10 +20,12 @@
             <form class="col s12 m4 offset-m4" action="#" method="post">
                 <div class="row">
                     <div class="input-field col s12">
+                        <i class="material-icons prefix">mail</i>
                         <input id="coMailName" type="text" name="coMailName" autocomplete="off">
                         <label for="coMailName">Mail</label>
                     </div>
                     <div class="input-field col s12">
+                        <i class="material-icons prefix">lock</i>
                         <input id="coPass" type="password" name="coPass" autocomplete="off">
                         <label for="coPass">Password</label>
                     </div>

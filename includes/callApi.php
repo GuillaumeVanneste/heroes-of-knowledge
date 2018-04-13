@@ -5,7 +5,7 @@
   $randomId = rand(0,8);
   $randomInfo = rand(0,2);
   
-  $id = array ('69','644','346','213','620','165','149','659','332');
+  $id = array ('70','644','346','213','620','165','149','659','332');
   $informations = array ('Le nom complet de ','Le lieu de naissance de ','La base de ',' se situe à '); // array for sentence
   $moreWords = array (' est ',);
 
@@ -55,10 +55,3 @@
   if(!empty($_POST['reload'])){
     
   }
-
-
-
-
-?>
-
-
