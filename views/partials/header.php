@@ -1,8 +1,10 @@
 <html>
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Heroes of Knowledge - <?= $link ?></title>
 
     <!-- Stylesheet -->
@@ -24,7 +26,7 @@
 </head>
 <body>
 
-
+    <!-- Navbar -->
     <nav class="nav-extended">
         <div class="nav-wrapper">
             <a href="index.php?link=home" class="brand-logo"><img class="logo" src="images/logo.png" alt="logo"></a>
@@ -43,6 +45,7 @@
         </div>
     </nav>
 
+    <!-- SideBar -->
     <ul class="sidenav" id="mobile-demo">
         <li class="tab"><a href="index.php?link=home">Home</a></li>
         <li class="tab"><a href="index.php?link=leaderboard">Leaderboard</a></li>

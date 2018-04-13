@@ -16,3 +16,20 @@ main
 {
     flex: 1 0 auto;
 }
+
+.login
+{
+    margin-top: 20px;
+}
+
+.login blockquote.successMessage
+{
+    margin: 0;
+    border-color: #76ff03;
+}
+
+.login blockquote.errorMessage
+{
+    margin: 0;
+    border-color: #B71C1C;
+}

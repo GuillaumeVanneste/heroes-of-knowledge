@@ -26,8 +26,7 @@
 
         // Success
         if(empty($errorMessages))
-        {     
-         
+        {
             $query = $pdo->query("SELECT username, password FROM users WHERE mail='$mail'");
             $user = $query->fetch();
 
