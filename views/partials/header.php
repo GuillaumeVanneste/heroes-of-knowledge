@@ -29,7 +29,7 @@
     <!-- Navbar -->
     <nav class="nav-extended">
         <div class="nav-wrapper">
-            <a href="index.php?link=home" class="brand-logo"><img class="logo" src="images/logo.png" alt="logo"></a>
+            <a href="index.php?link=home" class="brand-logo"><img class="responsive-img logo" src="images/logo.png" alt="logo"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li class="tab"><a href="index.php?link=home">Home</a></li>

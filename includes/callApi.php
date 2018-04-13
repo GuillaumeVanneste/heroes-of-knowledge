@@ -22,11 +22,12 @@
 
   if($placeOfBirth == "New York, New York"){  //Fixe Errors with api json
       $placeOfBirth = "New York";
-  }else if($base == "New York, New York"){
+  }
+  if($base == "New York, New York"){
       $base = "New York";
-  }else if($base == "(Banner) Hulkbuster Base, New Mexico, (Hulk) mobile, but prefers New Mexico"){
+  }
+  if($base == "(Banner) Hulkbuster Base, New Mexico, (Hulk) mobile, but prefers New Mexico"){
       $base = "Albuquerque, New Mexico"; 
-  }else{
   }
 
   if($randomInfo == 0){ //True name

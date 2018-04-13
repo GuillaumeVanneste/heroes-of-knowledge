@@ -1,1 +1,1 @@
-<h1>Welcolme <? if(!empty($current_user)) : echo $current_user; endif; ?> !</h1>
+<h1>Welcolme <?php if(!empty($current_user)) : echo $current_user; endif; ?> !</h1>
