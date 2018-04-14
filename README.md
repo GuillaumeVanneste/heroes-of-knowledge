@@ -21,12 +21,9 @@ CSS3
 
 PHP
 
-Visual Studio Code
-
-Google Chrome Dev Tools
-
 Materialize CSS
 
+Superhero API
 
 ## Improvements
 
